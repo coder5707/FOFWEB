@@ -1,0 +1,428 @@
+{
+  "customers": [
+    {
+      "id": 1.0,
+      "name": "kavi",
+      "phone": "9876543211",
+      "email": "k@gmail.com",
+      "created_at": "2026-02-08T06:31:18"
+    },
+    {
+      "id": 2.0,
+      "name": "DEEPAK",
+      "phone": "9597126918",
+      "email": "deepak@2006gmail.com",
+      "created_at": "2026-02-18T15:35:04"
+    },
+    {
+      "id": 3.0,
+      "name": "SASWATH",
+      "phone": "9876543210",
+      "email": "saswath@gmail.com",
+      "created_at": "2026-02-18T15:36:55"
+    },
+    {
+      "id": 4.0,
+      "name": "ravi",
+      "phone": "9876543210",
+      "email": "ravi@gmail.com",
+      "created_at": "2026-03-11T10:49:46"
+    },
+    {
+      "id": 5.0,
+      "name": "Ram",
+      "phone": "6382768649",
+      "email": "ram@gmail.com",
+      "created_at": "2026-03-11T10:51:38"
+    }
+  ],
+  "expense_categories": [
+    {
+      "id": 1.0,
+      "name": "Rent",
+      "icon": "\ud83c\udfe0",
+      "budget": 15000.0,
+      "created_at": "2026-06-27T13:14:57"
+    },
+    {
+      "id": 2.0,
+      "name": "Electricity",
+      "icon": "\ud83d\udca1",
+      "budget": 3000.0,
+      "created_at": "2026-06-27T13:14:57"
+    },
+    {
+      "id": 3.0,
+      "name": "Salaries",
+      "icon": "\ud83d\udc77",
+      "budget": 20000.0,
+      "created_at": "2026-06-27T13:14:57"
+    },
+    {
+      "id": 4.0,
+      "name": "Inventory",
+      "icon": "\ud83d\udce6",
+      "budget": 50000.0,
+      "created_at": "2026-06-27T13:14:57"
+    },
+    {
+      "id": 5.0,
+      "name": "Marketing",
+      "icon": "\ud83d\udce2",
+      "budget": 5000.0,
+      "created_at": "2026-06-27T13:14:57"
+    },
+    {
+      "id": 6.0,
+      "name": "Maintenance",
+      "icon": "\ud83d\udd27",
+      "budget": 2000.0,
+      "created_at": "2026-06-27T13:14:57"
+    },
+    {
+      "id": 7.0,
+      "name": "Packaging",
+      "icon": "\ud83d\udecd\ufe0f",
+      "budget": 3000.0,
+      "created_at": "2026-06-27T13:14:57"
+    },
+    {
+      "id": 8.0,
+      "name": "Transport",
+      "icon": "\ud83d\ude9a",
+      "budget": 4000.0,
+      "created_at": "2026-06-27T13:14:57"
+    },
+    {
+      "id": 9.0,
+      "name": "Miscellaneous",
+      "icon": "\ud83d\uddc2\ufe0f",
+      "budget": 2000.0,
+      "created_at": "2026-06-27T13:14:57"
+    }
+  ],
+  "expenses": [],
+  "products": [
+    {
+      "id": 1.0,
+      "name": "t - shirt",
+      "category": "mens",
+      "brand": "cool in cool",
+      "size": "xl",
+      "color": "red",
+      "image": null,
+      "publish_image": "1770627132_bmw.avif",
+      "price": 250.0,
+      "stock": 892.0,
+      "status": 0.0,
+      "publish_status": 1.0,
+      "created_at": "2026-02-08T06:29:38"
+    },
+    {
+      "id": 2.0,
+      "name": "shorts",
+      "category": "mens",
+      "brand": "jack  boy",
+      "size": "xl",
+      "color": "black",
+      "image": null,
+      "publish_image": null,
+      "price": 300.0,
+      "stock": 800.0,
+      "status": 1.0,
+      "publish_status": 0.0,
+      "created_at": "2026-02-08T06:52:29"
+    },
+    {
+      "id": 3.0,
+      "name": "jeans pant",
+      "category": "MENS",
+      "brand": "RAGZO",
+      "size": "30",
+      "color": "BLACK",
+      "image": null,
+      "publish_image": "1771409457_ragzo jeans.jpg",
+      "price": 960.0,
+      "stock": 395.0,
+      "status": 1.0,
+      "publish_status": 1.0,
+      "created_at": "2026-02-18T15:33:57"
+    },
+    {
+      "id": 4.0,
+      "name": "anime T-shirt",
+      "category": "MENS",
+      "brand": "adidas",
+      "size": "L",
+      "color": "BLACK",
+      "image": null,
+      "publish_image": "1771410079_naruto tshirt.jpg",
+      "price": 300.0,
+      "stock": 0.0,
+      "status": 1.0,
+      "publish_status": 1.0,
+      "created_at": "2026-02-18T15:51:03"
+    },
+    {
+      "id": 5.0,
+      "name": "shirt\r\n",
+      "category": "mens",
+      "brand": "fb",
+      "size": "xxl",
+      "color": "",
+      "image": null,
+      "publish_image": null,
+      "price": 999.0,
+      "stock": 78.0,
+      "status": 0.0,
+      "publish_status": 0.0,
+      "created_at": "2026-03-08T07:50:15"
+    }
+  ],
+  "sale_items": [
+    {
+      "id": 1.0,
+      "sale_id": 1.0,
+      "product_id": 1.0,
+      "quantity": 4.0,
+      "unit_price": 250.0
+    },
+    {
+      "id": 2.0,
+      "sale_id": 2.0,
+      "product_id": 1.0,
+      "quantity": 1.0,
+      "unit_price": 250.0
+    },
+    {
+      "id": 3.0,
+      "sale_id": 3.0,
+      "product_id": 3.0,
+      "quantity": 1.0,
+      "unit_price": 960.0
+    },
+    {
+      "id": 4.0,
+      "sale_id": 3.0,
+      "product_id": 1.0,
+      "quantity": 1.0,
+      "unit_price": 250.0
+    },
+    {
+      "id": 5.0,
+      "sale_id": 5.0,
+      "product_id": 4.0,
+      "quantity": 10.0,
+      "unit_price": 300.0
+    },
+    {
+      "id": 6.0,
+      "sale_id": 6.0,
+      "product_id": 4.0,
+      "quantity": 10.0,
+      "unit_price": 300.0
+    },
+    {
+      "id": 7.0,
+      "sale_id": 7.0,
+      "product_id": 4.0,
+      "quantity": 10.0,
+      "unit_price": 300.0
+    },
+    {
+      "id": 8.0,
+      "sale_id": 8.0,
+      "product_id": 4.0,
+      "quantity": 1.0,
+      "unit_price": 300.0
+    },
+    {
+      "id": 9.0,
+      "sale_id": 9.0,
+      "product_id": 4.0,
+      "quantity": 9.0,
+      "unit_price": 300.0
+    },
+    {
+      "id": 10.0,
+      "sale_id": 10.0,
+      "product_id": 1.0,
+      "quantity": 1.0,
+      "unit_price": 250.0
+    },
+    {
+      "id": 11.0,
+      "sale_id": 11.0,
+      "product_id": 4.0,
+      "quantity": 210.0,
+      "unit_price": 300.0
+    },
+    {
+      "id": 12.0,
+      "sale_id": 14.0,
+      "product_id": 3.0,
+      "quantity": 1.0,
+      "unit_price": 960.0
+    },
+    {
+      "id": 13.0,
+      "sale_id": 16.0,
+      "product_id": 3.0,
+      "quantity": 1.0,
+      "unit_price": 960.0
+    },
+    {
+      "id": 14.0,
+      "sale_id": 16.0,
+      "product_id": 1.0,
+      "quantity": 1.0,
+      "unit_price": 250.0
+    },
+    {
+      "id": 15.0,
+      "sale_id": 17.0,
+      "product_id": 5.0,
+      "quantity": 1.0,
+      "unit_price": 999.0
+    },
+    {
+      "id": 16.0,
+      "sale_id": 18.0,
+      "product_id": 3.0,
+      "quantity": 2.0,
+      "unit_price": 960.0
+    },
+    {
+      "id": 17.0,
+      "sale_id": 19.0,
+      "product_id": 5.0,
+      "quantity": 1.0,
+      "unit_price": 999.0
+    }
+  ],
+  "sales": [
+    {
+      "id": 1.0,
+      "customer_id": null,
+      "sale_date": "2026-02-08T06:30:27",
+      "total_amount": 1000.0
+    },
+    {
+      "id": 2.0,
+      "customer_id": 1.0,
+      "sale_date": "2026-02-08T06:31:18",
+      "total_amount": 250.0
+    },
+    {
+      "id": 3.0,
+      "customer_id": 2.0,
+      "sale_date": "2026-02-18T15:35:04",
+      "total_amount": 1210.0
+    },
+    {
+      "id": 4.0,
+      "customer_id": null,
+      "sale_date": "2026-03-01T16:24:04",
+      "total_amount": 3000.0
+    },
+    {
+      "id": 5.0,
+      "customer_id": null,
+      "sale_date": "2026-03-01T16:24:44",
+      "total_amount": 3000.0
+    },
+    {
+      "id": 6.0,
+      "customer_id": null,
+      "sale_date": "2026-03-01T16:24:44",
+      "total_amount": 3000.0
+    },
+    {
+      "id": 7.0,
+      "customer_id": null,
+      "sale_date": "2026-03-01T16:25:13",
+      "total_amount": 3000.0
+    },
+    {
+      "id": 8.0,
+      "customer_id": null,
+      "sale_date": "2026-03-01T16:25:19",
+      "total_amount": 300.0
+    },
+    {
+      "id": 9.0,
+      "customer_id": null,
+      "sale_date": "2026-03-01T16:25:44",
+      "total_amount": 2700.0
+    },
+    {
+      "id": 10.0,
+      "customer_id": null,
+      "sale_date": "2026-03-01T16:26:20",
+      "total_amount": 250.0
+    },
+    {
+      "id": 11.0,
+      "customer_id": null,
+      "sale_date": "2026-03-01T16:26:36",
+      "total_amount": 63000.0
+    },
+    {
+      "id": 12.0,
+      "customer_id": null,
+      "sale_date": "2026-03-01T16:26:55",
+      "total_amount": 300.0
+    },
+    {
+      "id": 13.0,
+      "customer_id": null,
+      "sale_date": "2026-03-01T16:27:02",
+      "total_amount": 300.0
+    },
+    {
+      "id": 14.0,
+      "customer_id": null,
+      "sale_date": "2026-03-01T16:27:07",
+      "total_amount": 960.0
+    },
+    {
+      "id": 15.0,
+      "customer_id": null,
+      "sale_date": "2026-03-01T16:27:12",
+      "total_amount": 300.0
+    },
+    {
+      "id": 16.0,
+      "customer_id": null,
+      "sale_date": "2026-03-08T07:51:13",
+      "total_amount": 3010.0
+    },
+    {
+      "id": 17.0,
+      "customer_id": null,
+      "sale_date": "2026-03-08T07:51:22",
+      "total_amount": 999.0
+    },
+    {
+      "id": 18.0,
+      "customer_id": 4.0,
+      "sale_date": "2026-03-11T10:49:46",
+      "total_amount": 2220.0
+    },
+    {
+      "id": 19.0,
+      "customer_id": null,
+      "sale_date": "2026-06-11T13:45:16",
+      "total_amount": 1299.0
+    }
+  ],
+  "users": [
+    {
+      "id": 1.0,
+      "username": "admin",
+      "password": "0192023a7bbd73250516f069df18b500",
+      "role": "admin",
+      "created_at": "2026-02-07T16:08:46"
+    }
+  ]
+}
