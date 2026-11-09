@@ -27,7 +27,7 @@ def list_expenses():
         SELECT e.*, ec.name as category_name, ec.icon as category_icon, ec.budget as category_budget
         FROM expenses e
         JOIN expense_categories ec ON e.category_id = ec.id
-        WHERE DATE_FORMAT(e.expense_date, '%Y-%m') = ?
+        WHERE DATE_FORMAT(e.expense_date, '%%Y-%%m') = ?
     """
     params = [month]
 
@@ -52,7 +52,7 @@ def list_expenses():
         SELECT ec.id, ec.name, ec.icon, ec.budget,
                COALESCE(SUM(e.amount), 0) as total_spent
         FROM expense_categories ec
-        LEFT JOIN expenses e ON e.category_id = ec.id AND DATE_FORMAT(e.expense_date, '%Y-%m') = ?
+        LEFT JOIN expenses e ON e.category_id = ec.id AND DATE_FORMAT(e.expense_date, '%%Y-%%m') = ?
         GROUP BY ec.id
         ORDER BY total_spent DESC, ec.name ASC
     """, (month,))
@@ -135,7 +135,7 @@ def list_expense_categories():
                COALESCE(SUM(e.amount), 0) as spent_this_month,
                COUNT(e.id) as expense_count
         FROM expense_categories ec
-        LEFT JOIN expenses e ON ec.id = e.category_id AND DATE_FORMAT(e.expense_date, '%Y-%m') = ?
+        LEFT JOIN expenses e ON ec.id = e.category_id AND DATE_FORMAT(e.expense_date, '%%Y-%%m') = ?
         GROUP BY ec.id
         ORDER BY ec.name ASC
     """, (month,))
@@ -204,7 +204,7 @@ def expense_analytics():
         SELECT ec.id, ec.name, ec.icon, ec.budget,
                COALESCE(SUM(e.amount), 0) as total_spent
         FROM expense_categories ec
-        LEFT JOIN expenses e ON e.category_id = ec.id AND DATE_FORMAT(e.expense_date, '%Y-%m') = ?
+        LEFT JOIN expenses e ON e.category_id = ec.id AND DATE_FORMAT(e.expense_date, '%%Y-%%m') = ?
         GROUP BY ec.id
         ORDER BY total_spent DESC
     """, (month,))

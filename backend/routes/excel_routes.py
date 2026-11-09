@@ -232,7 +232,7 @@ def export_expenses():
                e.title, e.amount, e.note, ec.budget as category_budget
         FROM expenses e
         JOIN expense_categories ec ON e.category_id = ec.id
-        WHERE strftime('%Y-%m', e.expense_date) = ?
+        WHERE DATE_FORMAT(e.expense_date, '%%Y-%%m') = ?
     """
     params = [month]
     if category_id:
@@ -411,7 +411,7 @@ def export_expense_categories():
                (ec.budget - COALESCE(SUM(e.amount), 0)) as remaining,
                COUNT(e.id) as expense_count
         FROM expense_categories ec
-        LEFT JOIN expenses e ON ec.id = e.category_id AND strftime('%Y-%m', e.expense_date) = ?
+        LEFT JOIN expenses e ON ec.id = e.category_id AND DATE_FORMAT(e.expense_date, '%%Y-%%m') = ?
         GROUP BY ec.id
         ORDER BY ec.name ASC
     """, (month,))
@@ -457,7 +457,7 @@ def export_budgets():
                COALESCE(SUM(e.amount), 0) as spent,
                (ec.budget - COALESCE(SUM(e.amount), 0)) as variance
         FROM expense_categories ec
-        LEFT JOIN expenses e ON ec.id = e.category_id AND strftime('%Y-%m', e.expense_date) = ?
+        LEFT JOIN expenses e ON ec.id = e.category_id AND DATE_FORMAT(e.expense_date, '%%Y-%%m') = ?
         GROUP BY ec.id
         ORDER BY ec.budget DESC
     """, (month,))
@@ -533,7 +533,7 @@ def export_monthly_report():
                COUNT(*) as bill_count,
                SUM(total_amount) as total
         FROM sales
-        WHERE strftime('%Y-%m', sale_date) = ?
+        WHERE DATE_FORMAT(sale_date, '%%Y-%%m')= ?
         GROUP BY date(sale_date)
         ORDER BY date(sale_date) ASC
     """, (month_str,))

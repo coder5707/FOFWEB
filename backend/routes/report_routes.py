@@ -51,7 +51,7 @@ def monthly_report():
                SUM(total_amount) as total,
                COUNT(*) as bill_count
         FROM sales
-        WHERE DATE_FORMAT(sale_date, '%Y-%m') = ?
+        WHERE DATE_FORMAT(sale_date, '%%Y-%%m') = ?
         GROUP BY date(sale_date)
         ORDER BY date(sale_date) ASC
     """, (month_str,))
@@ -59,7 +59,7 @@ def monthly_report():
     total_row = query_db("""
         SELECT COALESCE(SUM(total_amount), 0) as total, COUNT(*) as count
         FROM sales
-        WHERE DATE_FORMAT(sale_date, '%Y-%m') = ?
+        WHERE DATE_FORMAT(sale_date, '%%Y-%%m') = ?
     """, (month_str,), one=True)
 
     month_total = float(total_row['total']) if total_row else 0.0

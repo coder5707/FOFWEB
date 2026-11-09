@@ -39,7 +39,7 @@ def get_metrics():
     spent_row = query_db("""
         SELECT COALESCE(SUM(amount), 0) as spent 
         FROM expenses 
-        WHERE DATE_FORMAT(expense_date, '%Y-%m') = ?
+        WHERE DATE_FORMAT(expense_date, '%%Y-%%m') = ?
     """, (current_month,), one=True)
     exp_spent = float(spent_row['spent']) if spent_row else 0.0
 
