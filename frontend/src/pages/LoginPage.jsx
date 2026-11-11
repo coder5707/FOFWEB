@@ -51,7 +51,7 @@ export default function LoginPage({ onLoginSuccess, onGoToStore }) {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      background: 'linear-gradient(135deg, #8e0e00 0%, #1f1c18 100%)',
+      background: 'linear-gradient(135deg, #2c3e50 0%, #3498db 100%)',
       padding: 20
     }}>
       <div style={{
