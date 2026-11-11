@@ -126,7 +126,7 @@ export default function NewSalePage({ showToast }) {
     // Check stock locally before sending
     for (const it of validItems) {
       if (it.quantity > it.stock) {
-        showToast(`Insufficient stock for "${it.name}". Available: ${it.stock}, Requested: ${it.quantity}`, 'error');
+        showToast(`Insufficient stock for "${it.name}". Available: ${it.stock}, Requested: ${it.size}`, 'error');
         return;
       }
     }
