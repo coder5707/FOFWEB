@@ -92,7 +92,7 @@ export default function PrintBillModal({ saleData, onClose }) {
             </tbody>
             <tfoot>
               <tr style={{ borderTop: '2px solid #0f172a', background: '#f8fafc' }}>
-                <td colSpan={4} style={{ padding: '12px 16px', textAlign: 'right', fontWeight: 800, fontSize: '1.05rem' }}>
+                <td colSpan={4} style={{ padding: '12px 16px', textAlign: 'right', fontWeight: 800, fontSize: '1.05rem',color:'green' }}>
                   Grand Total Amount:
                 </td>
                 <td style={{ padding: '5px 5px', textAlign: 'right', fontWeight: 800, fontSize: '1.2rem', color: '#0f172a' }}>
