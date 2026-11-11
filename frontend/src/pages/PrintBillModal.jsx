@@ -38,8 +38,8 @@ export default function PrintBillModal({ saleData, onClose }) {
         <div className="modal-body print-bill-container" style={{ padding: '24px 30px' }}>
           {/* Bill Printable Layout */}
           <div style={{ textAlign: 'center', marginBottom: 20, borderBottom: '2px solid #1e293b', paddingBottom: 14 }}>
-            <h2 style={{ fontSize: '1.6rem', color: '#0f172a', fontWeight: 800 }}>Retail Clothes Shop</h2>
-            <h4 style={{ color: '#475569', fontWeight: 600, marginTop: 4 }}>TAX INVOICE / CASH BILL</h4>
+            <h2 style={{ fontSize: '1.6rem', color: '#0f172a', fontWeight: 800 }}>FRIENDS OF FASHION</h2>
+            <p style={{ color: '#475569', fontSize: '0.85rem', marginTop: 5, lineHeight: 1.5 }}>PKR College Opposite, Muruganputhur,<br />Gobichettipalayam, Erode - 638452</p><h4 style={{ color: '#475569', fontWeight: 600, marginTop: 8 }}>TAX INVOICE / CASH BILL</h4>
           </div>
 
           <div style={{
