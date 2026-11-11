@@ -280,7 +280,7 @@ export default function NewSalePage({ showToast }) {
                         <option value="">-- Choose Product --</option>
                         {products.map((p) => (
                           <option key={p.id} value={p.id} disabled={p.stock <= 0}>
-                            {p.name} {p.category ? `(${p.category})` : ''} — ₹{p.brand} [Size: {p.size}] {p.stock <= 0 ? '(Out of stock)' : ''}
+                            {p.name} {p.category ? `(${p.category})` : ''} — {p.brand} [Size: {p.size}] {p.stock <= 0 ? '(Out of stock)' : ''}
                           </option>
                         ))}
                       </select>
