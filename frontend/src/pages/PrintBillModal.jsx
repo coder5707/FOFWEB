@@ -95,7 +95,7 @@ export default function PrintBillModal({ saleData, onClose }) {
                 <td colSpan={4} style={{ padding: '12px 16px', textAlign: 'right', fontWeight: 800, fontSize: '1.05rem' }}>
                   Grand Total Amount:
                 </td>
-                <td style={{ padding: '8px 16px', textAlign: 'right', fontWeight: 800, fontSize: '1.2rem', color: '#0f172a' }}>
+                <td style={{ padding: '5px 5px', textAlign: 'right', fontWeight: 800, fontSize: '1.2rem', color: '#0f172a' }}>
                   ₹ {Number(sale.total_amount).toFixed(2)}
                 </td>
               </tr>
