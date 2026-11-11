@@ -66,7 +66,7 @@ export default function PrintBillModal({ saleData, onClose }) {
           <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 20, fontSize: '0.92rem' }}>
             <thead>
               <tr style={{ background: '#f1f5f9', borderBottom: '2px solid #cbd5e1' }}>
-                <th style={{ padding: '8px 12px', textAlign: 'center', width: 40 }}>#</th>
+                <th style={{ padding: '8px 12px', textAlign: 'center', width: 40 }}>S.no</th>
                 <th style={{ padding: '8px 12px', textAlign: 'left' }}>Item Description</th>
                 <th style={{ padding: '8px 12px', textAlign: 'center', width: 60 }}>Qty</th>
                 <th style={{ padding: '8px 12px', textAlign: 'right', width: 100 }}>Price (₹)</th>
