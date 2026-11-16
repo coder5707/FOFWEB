@@ -1,7 +1,24 @@
 // API helper client for Retail Shop Management System
-const API_BASE = import.meta.env.VITE_API_BASE_URL
-  ? `${import.meta.env.VITE_API_BASE_URL.replace(/\/+$/, '')}/api`
-  : '/api';
+const configuredApiBase = import.meta.env.VITE_API_BASE_URL
+  ? import.meta.env.VITE_API_BASE_URL.replace(/\/+$/, '')
+  : '';
+
+const API_BASE = configuredApiBase ? `${configuredApiBase}/api` : '/api';
+
+// Uploaded files are served by the Flask backend, not necessarily by the
+// frontend host (for example when the frontend is deployed on Vercel).
+export function getProductImageUrl(filename) {
+  if (!filename || typeof filename !== 'string') return null;
+  const value = filename.trim();
+  if (!value) return null;
+  if (/^(https?:)?\/\//i.test(value) || value.startsWith('data:')) return value;
+  if (value.startsWith('/uploads/')) {
+    return configuredApiBase ? `${new URL(configuredApiBase, window.location.origin).origin}${value}` : value;
+  }
+  const safeName = value.split('/').pop();
+  const path = `/uploads/products/${encodeURIComponent(safeName)}`;
+  return configuredApiBase ? `${new URL(configuredApiBase, window.location.origin).origin}${path}` : path;
+}
 
 export const getAuthToken = () => localStorage.getItem('retail_token');
 export const setAuthToken = (token) => {
