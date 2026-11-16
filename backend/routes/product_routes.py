@@ -19,7 +19,10 @@ def save_uploaded_image(file_storage):
         return None
     ext = file_storage.filename.rsplit('.', 1)[1].lower()
     clean_base = secure_filename(file_storage.filename.rsplit('.', 1)[0])
-    filename = f"{int(time.time())}_{clean_base}.{ext}"
+    # Use a unique filename so two uploads in the same second never overwrite
+    # one another (a common cause of different products showing the same photo).
+    filename = f"{int(time.time())}_{uuid.uuid4().hex[:10]}_{clean_base}.{ext}"
+    os.makedirs(Config.UPLOAD_FOLDER, exist_ok=True)
     target_path = os.path.join(Config.UPLOAD_FOLDER, filename)
     file_storage.save(target_path)
     return filename
@@ -175,7 +178,9 @@ def publish_product(product_id):
     if not product:
         return jsonify({'success': False, 'message': 'Product not found.'}), 404
 
-    image_name = product['publish_image']
+    # An explicitly uploaded storefront cover takes priority. If no cover is
+    # uploaded, use the product's own image instead of leaving the catalog blank.
+    image_name = product.get('publish_image') or product.get('image')
     if 'publish_image' in request.files:
         uploaded = save_uploaded_image(request.files['publish_image'])
         if uploaded:
@@ -227,7 +232,9 @@ def get_storefront_products():
     search = request.args.get('search', '').strip()
     category = request.args.get('category', '').strip()
 
-    sql = "SELECT id, name, category, brand, size, color, price, stock, publish_image FROM products WHERE status = 1 AND publish_status = 1"
+    # Return both image columns: publish_image is the optional storefront
+    # override; image is the original photo uploaded in Product Management.
+    sql = "SELECT id, name, category, brand, size, color, price, stock, image, publish_image FROM products WHERE status = 1 AND publish_status = 1"
     params = []
 
     if category:
