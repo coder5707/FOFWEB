@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Store, Search, LogIn, ArrowLeft, Image, Tag, RefreshCw } from 'lucide-react';
-import { fetchApi } from '../api';
+import { fetchApi, getProductImageUrl } from '../api';
 
 export default function CustomerStorefrontPage({ onBackToPortal }) {
   const [products, setProducts] = useState([]);
@@ -153,9 +153,9 @@ export default function CustomerStorefrontPage({ onBackToPortal }) {
         ) : products.length > 0 ? (
           <div className="store-grid">
             {products.map((p) => {
-              const imgUrl = p.publish_image
-                ? `/uploads/products/${p.publish_image}`
-                : (p.image ? `/uploads/products/${p.image}` : null);
+              // Prefer the storefront cover, then fall back to the product
+              // management photo. Do not use a generic stock photo for errors.
+              const imgUrl = getProductImageUrl(p.publish_image || p.image);
 
               return (
                 <div key={p.id} className="store-card">
@@ -165,8 +165,21 @@ export default function CustomerStorefrontPage({ onBackToPortal }) {
                       alt={p.name}
                       className="store-card-img"
                       onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = 'https://images.unsplash.com/photo-1523381294911-8d3cead13475?w=500&auto=format&fit=crop&q=60';
+                        const failedImage = e.currentTarget;
+                        const originalProductImage = getProductImageUrl(p.image);
+                        // If the optional storefront cover is missing, try the
+                        // original product upload before showing a placeholder.
+                        if (
+                          originalProductImage &&
+                          failedImage.dataset.triedOriginal !== '1' &&
+                          new URL(originalProductImage, window.location.origin).href !== failedImage.src
+                        ) {
+                          failedImage.dataset.triedOriginal = '1';
+                          failedImage.src = originalProductImage;
+                          return;
+                        }
+                        failedImage.onerror = null;
+                        failedImage.src = '/product-placeholder.svg';
                       }}
                     />
                   ) : (
