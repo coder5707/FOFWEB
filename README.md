@@ -1,4 +1,4 @@
-# 🛍️ Retail Shop Management System (Python Flask + React + SQLite3)
+# 🛍️ Retail Shop Management System (Python Flask + React + mySQL)
 
 A complete, modern conversion of the legacy PHP & MySQL Retail Shop Management System into a high-performance web application powered by **Python Flask**, **SQLite3**, **React.js (Vite)**, and **Openpyxl**.
 
